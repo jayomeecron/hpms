@@ -1,0 +1,166 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{color}
+\usepackage{listings}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{tocloft}
+\usepackage{titlesec}
+
+\geometry{a4paper, margin=1in}
+
+\titleformat{\section}
+{\normalfont\Large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}
+{\normalfont\large\bfseries}{\thesubsection}{1em}{}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\fancyhead[L]{HPMS Documentation}
+\fancyhead[R]{\thepage}
+\fancyfoot[C]{Hospital Patient Management System}
+
+\title{
+    {\Huge\textbf{Hospital Patient Management System}}\\
+    \Large{Technical Documentation}
+}
+\author{Global Hospital}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\newpage
+
+\tableofcontents
+\newpage
+
+\section{Overview}
+The Hospital Patient Management System (HPMS) is a comprehensive web-based application designed to manage hospital operations, patient records, appointments, and prescriptions. The system serves three types of users: Patients, Doctors, and Administrators.
+
+\section{System Architecture}
+\begin{itemize}
+    \item Backend: PHP
+    \item Database: MySQL
+    \item Frontend: HTML5, CSS3, JavaScript, jQuery
+    \item UI Framework: Bootstrap, AdminLTE
+    \item Session Management: PHP Sessions
+\end{itemize}
+
+\section{Core Modules}
+
+\subsection{Authentication Module (/auth/)}
+\begin{itemize}
+    \item Login System (login.php)
+    \item Registration System (register.php)
+    \item Password Management (change\_password.php)
+    \item Session Management (backend.php)
+    \item Logout Functionality (logout.php)
+\end{itemize}
+
+\subsection{Patient Module (/patient/)}
+\begin{itemize}
+    \item Appointment Booking (appointment.php)
+    \item Appointment History (appointment\_history.php)
+    \item Prescription View (pat\_prescription.php)
+\end{itemize}
+
+\subsection{Doctor Module (/doctor/)}
+\begin{itemize}
+    \item Appointment Management (doc\_appointment.php)
+    \item Prescription Management (doc\_prescription.php)
+    \item Patient Records (docpresctb.php)
+\end{itemize}
+
+\subsection{Admin Module (/admin/)}
+\begin{itemize}
+    \item Doctor Management (doctor\_list.php, add\_doctor.php)
+    \item Patient Management (patient\_list.php)
+    \item Appointment Overview (adminappointment\_details.php)
+    \item Message Management (messages.php)
+\end{itemize}
+
+\section{Key Features}
+
+\subsection{Authentication \& Security}
+\begin{itemize}
+    \item Secure login/registration system
+    \item Password hashing
+    \item Session management
+    \item Role-based access control
+\end{itemize}
+
+\subsection{Patient Features}
+\begin{itemize}
+    \item Book appointments with doctors
+    \item View appointment history
+    \item Access prescriptions
+    \item Update profile information
+\end{itemize}
+
+\subsection{Doctor Features}
+\begin{itemize}
+    \item Manage patient appointments
+    \item Create and manage prescriptions
+    \item View patient history
+    \item Schedule management
+\end{itemize}
+
+\subsection{Admin Features}
+\begin{itemize}
+    \item Add/manage doctors
+    \item View patient records
+    \item Monitor appointments
+    \item System message management
+\end{itemize}
+
+\section{Database Structure}
+The system uses MySQL database with the following key tables:
+\begin{itemize}
+    \item user (Admin information)
+    \item doctreg (Doctor registration)
+    \item patreg (Patient registration)
+    \item appointment (Appointment records)
+    \item prescription (Medical prescriptions)
+\end{itemize}
+
+\section{Security Features}
+\begin{enumerate}
+    \item Password Hashing
+    \item Session Management
+    \item SQL Injection Prevention
+    \item XSS Protection
+    \item CSRF Protection
+\end{enumerate}
+
+\section{System Requirements}
+\begin{itemize}
+    \item Web Server: Apache/Nginx
+    \item PHP Version: 7.4 or higher
+    \item MySQL Version: 5.7 or higher
+    \item Modern web browser with JavaScript enabled
+\end{itemize}
+
+\section{Installation Guide}
+\begin{enumerate}
+    \item Clone the repository to your web server directory
+    \item Import the database schema
+    \item Configure database credentials in constants.php
+    \item Ensure proper file permissions
+    \item Access the system through web browser
+\end{enumerate}
+
+\section{Maintenance}
+Regular maintenance tasks include:
+\begin{itemize}
+    \item Database backup
+    \item Log file management
+    \item Security updates
+    \item Performance optimization
+\end{itemize}
+
+\end{document}
